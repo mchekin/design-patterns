@@ -1,0 +1,23 @@
+{
+    "name": "mchekin/php-design-patterns",
+    "description": "Object-oriented design pattern implementations in PHP",
+    "keywords": ["php", "oop", "design patterns"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Patterns\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
