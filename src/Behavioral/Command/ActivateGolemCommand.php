@@ -2,7 +2,7 @@
 
 namespace Patterns\Behavioral\Command;
 
-class GolemActivateCommand implements CommandInterface
+class ActivateGolemCommand implements CommandInterface
 {
     /**
      * @var Golem
