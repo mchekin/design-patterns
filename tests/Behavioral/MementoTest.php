@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Behavior;
+namespace Tests\Behavioral;
 
 use Patterns\Behavioral\Memento\Person;
 use Patterns\Behavioral\Memento\PersonCaretaker;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Behavior;
+namespace Tests\Behavioral;
 
 use Patterns\Behavioral\Command\Golem;
 use Patterns\Behavioral\Command\ActivateMultipleGolemsCommand2;

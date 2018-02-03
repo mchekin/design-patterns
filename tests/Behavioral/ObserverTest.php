@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Behavior;
+namespace Tests\Behavioral;
 
 use Patterns\Behavioral\Observer\CommunicationChannel;
 use Patterns\Behavioral\Observer\Person;

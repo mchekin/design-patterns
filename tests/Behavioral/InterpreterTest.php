@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Behavior;
+namespace Tests\Behavioral;
 
 use Patterns\Behavioral\Interpreter\AndExpression;
 use Patterns\Behavioral\Interpreter\OrExpression;
