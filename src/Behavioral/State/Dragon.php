@@ -2,7 +2,8 @@
 
 namespace Patterns\Behavioral\State;
 
-class Dragon extends Context
+// the context
+class Dragon
 {
     private $eatingState;
     private $sleepingState;
@@ -58,17 +59,17 @@ class Dragon extends Context
     }
 
     /**
-     * @return mixed
+     * @return SleepingState
      */
-    public function getSleepingState()
+    public function getSleepingState() : SleepingState
     {
         return $this->sleepingState;
     }
 
     /**
-     * @return mixed
+     * @return FlyingState
      */
-    public function getFlyingState()
+    public function getFlyingState() : FlyingState
     {
         return $this->flyingState;
     }
