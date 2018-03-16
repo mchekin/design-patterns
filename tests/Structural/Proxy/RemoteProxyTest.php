@@ -2,9 +2,9 @@
 
 namespace Tests\Structural;
 
-use Github\Client;
-use Patterns\Structural\Proxy\RemoteProxy\GitHubAccount;
-use Patterns\Structural\Proxy\RemoteProxy\GitHubAccountRemoteProxy;
+use Patterns\Structural\Proxy\RemoteProxy\RemoteAccount;
+use Patterns\Structural\Proxy\RemoteProxy\AccountRemoteProxy;
+use Patterns\Structural\Proxy\HttpClientMock;
 use PHPUnit\Framework\TestCase;
 
 class RemoteProxyTest extends TestCase
@@ -15,24 +15,24 @@ class RemoteProxyTest extends TestCase
     public function gets_data_from_remote_server()
     {
         $username = 'mchekin';
-        $client = new Client();
-        $repositories = $client->api('user')->repositories($username);
+
+        $client = new HttpClientMock();
+        $userData = $client->getData($username);
 
         /**
-         * This illustrates the local access to the repositories data on the GitHub server itself,
-         * since we cannot really add this implementation on the GitHub server.
+         * This Remote Account illustarates data access on the remote server where data is available locally.
          */
-        $local = new GitHubAccount($username, $repositories);
-        $localRepositories = $local->getUserRepositories();
+        $remoteAccount = new RemoteAccount($userData, $username);
+        $remoteFirstName = $remoteAccount->getFirstName();
 
         /**
-         * This is a Remote Proxy which implements the same interface as the real GitHubAccount
-         * but gets it data from a the GitHub server.
-         * So outwardly it acts just like the real thing, but actually it gets it's data from a remote server.
+         * This is a Remote Proxy which implements the same interface as the Remote Account
+         * but gets it data through the network, using the HttpClient.
+         * Outwardly it acts just like the real thing, but actually it gets it's data from a remote server.
          */
-        $remoteProxy = new GitHubAccountRemoteProxy($client, $username);
-        $remoteRepositories = $remoteProxy->getUserRepositories();
+        $remoteProxy = new AccountRemoteProxy($client, $username);
+        $firstName = $remoteProxy->getFirstName();
 
-        static::assertEquals($localRepositories, $remoteRepositories);
+        static::assertEquals($remoteFirstName, $firstName);
     }
 }
