@@ -3,7 +3,7 @@
 namespace Patterns\Structural\Proxy;
 
 
-class HttpClientMock
+class FileSystem
 {
     /**
      * @var array

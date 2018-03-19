@@ -2,7 +2,7 @@
 
 namespace Tests\Structural;
 
-use Patterns\Structural\Proxy\FileSystemMock;
+use Patterns\Structural\Proxy\FileSystem;
 use Patterns\Structural\Proxy\VirtualProxy\AccountVirtualProxy;
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +14,7 @@ class VirtualProxyTest extends TestCase
     public function loads_expensive_data_only_when_requested()
     {
         $username = 'mchekin';
-        $filesystem = new FileSystemMock();
+        $filesystem = new FileSystem();
         $userData = $filesystem->getData($username);
 
         $accountGhostObject = new AccountVirtualProxy($filesystem, $username);

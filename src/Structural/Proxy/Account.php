@@ -12,10 +12,10 @@ class Account implements AccountInterface
 
     /**
      * GitHubProxy constructor.
-     * @param FileSystemMock $filesystem
+     * @param FileSystem $filesystem
      * @param string $username
      */
-    public function __construct(FileSystemMock $filesystem, string $username)
+    public function __construct(FileSystem $filesystem, string $username)
     {
         $this->data = $filesystem->getData($username);
     }

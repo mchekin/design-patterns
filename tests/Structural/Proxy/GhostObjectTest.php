@@ -3,7 +3,7 @@
 namespace Tests\Structural;
 
 use Patterns\Structural\Proxy\GhostObject\AccountGhostObject;
-use Patterns\Structural\Proxy\FileSystemMock;
+use Patterns\Structural\Proxy\FileSystem;
 use PHPUnit\Framework\TestCase;
 
 class GhostObjectTest extends TestCase
@@ -14,7 +14,7 @@ class GhostObjectTest extends TestCase
     public function loads_expensive_data_only_when_requested()
     {
         $username = 'mchekin';
-        $filesystem = new FileSystemMock();
+        $filesystem = new FileSystem();
         $userData = $filesystem->getData($username);
 
         $account = new AccountGhostObject($filesystem, $username);

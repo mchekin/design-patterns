@@ -4,7 +4,7 @@ namespace Tests\Structural;
 
 use Patterns\Structural\Proxy\RemoteProxy\RemoteAccount;
 use Patterns\Structural\Proxy\RemoteProxy\AccountRemoteProxy;
-use Patterns\Structural\Proxy\HttpClientMock;
+use Patterns\Structural\Proxy\HttpClient;
 use PHPUnit\Framework\TestCase;
 
 class RemoteProxyTest extends TestCase
@@ -16,7 +16,7 @@ class RemoteProxyTest extends TestCase
     {
         $username = 'mchekin';
 
-        $client = new HttpClientMock();
+        $client = new HttpClient();
         $userData = $client->getData($username);
 
         /**

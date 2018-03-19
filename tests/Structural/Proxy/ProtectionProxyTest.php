@@ -3,7 +3,7 @@
 namespace Tests\Structural;
 
 use Patterns\Structural\Proxy\Account;
-use Patterns\Structural\Proxy\FileSystemMock;
+use Patterns\Structural\Proxy\FileSystem;
 use Patterns\Structural\Proxy\ProtectionProxy\AccessLimitReachedException;
 use Patterns\Structural\Proxy\ProtectionProxy\AccountProtectionProxy;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +18,7 @@ class ProtectionProxyTest extends TestCase
     {
         $accessLimit = 3;
         $username = 'mchekin';
-        $filesystem = new FileSystemMock();
+        $filesystem = new FileSystem();
         $userData = $filesystem->getData($username);
 
         $account = new Account($filesystem, $username);
@@ -41,7 +41,7 @@ class ProtectionProxyTest extends TestCase
         $username = 'mchekin';
         $accessLimit = 3;
 
-        $account = new Account(new FileSystemMock(), $username);
+        $account = new Account(new FileSystem(), $username);
 
         $accountProtectionProxy = new AccountProtectionProxy($account, $accessLimit);
 

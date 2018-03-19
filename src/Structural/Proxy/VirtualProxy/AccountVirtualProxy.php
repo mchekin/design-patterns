@@ -5,7 +5,7 @@ namespace Patterns\Structural\Proxy\VirtualProxy;
 
 use Patterns\Structural\Proxy\Account;
 use Patterns\Structural\Proxy\AccountInterface;
-use Patterns\Structural\Proxy\FileSystemMock;
+use Patterns\Structural\Proxy\FileSystem;
 
 class AccountVirtualProxy implements AccountInterface
 {
@@ -18,16 +18,16 @@ class AccountVirtualProxy implements AccountInterface
      */
     private $wrapped;
     /**
-     * @var FileSystemMock
+     * @var FileSystem
      */
     private $filesystem;
 
     /**
      * GitHubProxy constructor.
-     * @param FileSystemMock $filesystem
+     * @param FileSystem $filesystem
      * @param string $username
      */
-    public function __construct(FileSystemMock $filesystem, string $username)
+    public function __construct(FileSystem $filesystem, string $username)
     {
         $this->username = $username;
         $this->filesystem = $filesystem;

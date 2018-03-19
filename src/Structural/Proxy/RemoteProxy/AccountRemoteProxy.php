@@ -4,12 +4,12 @@ namespace Patterns\Structural\Proxy\RemoteProxy;
 
 
 use Patterns\Structural\Proxy\AccountInterface;
-use Patterns\Structural\Proxy\HttpClientMock;
+use Patterns\Structural\Proxy\HttpClient;
 
 class AccountRemoteProxy implements AccountInterface
 {
     /**
-     * @var HttpClientMock
+     * @var HttpClient
      */
     private $httpClient;
     /**
@@ -19,10 +19,10 @@ class AccountRemoteProxy implements AccountInterface
 
     /**
      * GitHubProxy constructor.
-     * @param HttpClientMock $httpClient
+     * @param HttpClient $httpClient
      * @param string $username
      */
-    public function __construct(HttpClientMock $httpClient, string $username)
+    public function __construct(HttpClient $httpClient, string $username)
     {
         $this->httpClient = $httpClient;
         $this->username = $username;
