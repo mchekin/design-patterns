@@ -3,22 +3,23 @@
 namespace Patterns\Structural\Proxy\GhostObject;
 
 use Patterns\Structural\Proxy\Account;
+use Patterns\Structural\Proxy\AccountInterface;
 use Patterns\Structural\Proxy\FileSystemMock;
 
-class AccountGhostObject extends Account
+class AccountGhostObject implements AccountInterface
 {
     /**
      * @var string
      */
     private $username;
     /**
-     * @var Account
-     */
-    private $wrapped;
-    /**
      * @var FileSystemMock
      */
     private $filesystem;
+    /**
+     * @var array
+     */
+    private $data;
 
     /**
      * GitHubProxy constructor.
@@ -38,13 +39,17 @@ class AccountGhostObject extends Account
     {
         $this->initialize();
 
-        return parent::getFirstName();
+        return $this->data['firstName'] ?? '';
     }
 
+    /**
+     *  The parent object is initialized on
+     */
     protected function initialize(): void
     {
-        if (is_null($this->wrapped)) {
-            parent::__construct($this->filesystem, $this->username);
+        if (is_null($this->data)) {
+            $account = new Account($this->filesystem, $this->username);
+            $this->data = $account->getData();
         }
     }
 }
