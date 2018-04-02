@@ -2,7 +2,7 @@
 
 namespace Patterns\Structural\Proxy;
 
-
+// A subject.
 class Account implements AccountInterface
 {
     /**
