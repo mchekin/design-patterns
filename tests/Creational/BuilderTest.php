@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Behavioral;
+namespace Tests\Creational;
 
 use Patterns\Creational\Builder\CharacterBuilder;
 use PHPUnit\Framework\TestCase;
 
-class CommandTest extends TestCase
+class BuilderTest extends TestCase
 {
     /**
      * @test

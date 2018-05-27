@@ -4,8 +4,6 @@ namespace Tests\Behavioral;
 
 use Patterns\Behavioral\Strategy\DwarfStrategy;
 use Patterns\Behavioral\Strategy\Humanoid;
-use Patterns\Behavioral\Strategy\ElfStrategy;
-use Patterns\Behavioral\Strategy\OrcStrategy;
 use PHPUnit\Framework\TestCase;
 
 class StrategyTest extends TestCase
