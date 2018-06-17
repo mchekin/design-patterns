@@ -56,7 +56,7 @@ class AbstractFactoryTest extends TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage The continent is not supported
      */
-    public function throws_exception_on_trying_to_create_non_existing_asian_animal()
+    public function throwsExceptionOnTryingToRetrieveNonExistentAnimalFactory()
     {
         // Act
         AbstractAnimalFactory::getAnimalFactory(Continent::EUROPE);

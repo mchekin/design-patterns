@@ -50,7 +50,7 @@ class FactoryMethodTest extends TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage There is no such animal species in Asia
      */
-    public function throws_exception_on_trying_to_create_non_existing_asian_animal()
+    public function throwsExceptionOnTryingToCreateNonExistingAsianAnimal()
     {
         // Act
         $this->asianAnimalFactory->create(Species::HIPPO);
