@@ -7,7 +7,7 @@ class Character
 {
     private $attributes;
 
-    public function __construct(CharacterBuilder $builder)
+    public function __construct(CharacterBuilderInterface $builder)
     {
         $this->attributes = $builder->getAttributes();
     }
