@@ -10,6 +10,6 @@ class AfricanRhino implements Animal
      */
     public function getSound(): string
     {
-        return "Eeeeeh (in African)";
+        return "Eeeeeh (African)";
     }
 }

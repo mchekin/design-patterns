@@ -10,6 +10,6 @@ class AsianRhino implements Animal
      */
     public function getSound(): string
     {
-        return "Eeeeeh (in Asian)";
+        return "Eeeeeh (Asian)";
     }
 }

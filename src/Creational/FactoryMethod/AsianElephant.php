@@ -10,6 +10,6 @@ class AsianElephant implements Animal
      */
     public function getSound(): string
     {
-        return "Pauuuuh (in Asian)";
+        return "Pauuuuh (Asian)";
     }
 }

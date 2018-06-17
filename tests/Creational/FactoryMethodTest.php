@@ -2,11 +2,11 @@
 
 namespace Tests\Creational;
 
+use InvalidArgumentException;
 use Patterns\Creational\FactoryMethod\AfricanAnimalFactory;
 use Patterns\Creational\FactoryMethod\AsianAnimalFactory;
 use Patterns\Creational\FactoryMethod\Species;
 use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 class FactoryMethodTest extends TestCase
 {
@@ -39,15 +39,15 @@ class FactoryMethodTest extends TestCase
         $hippo = $this->africanAnimalFactory->create(Species::HIPPO);
 
         // Assert
-        static::assertEquals("Pauuuuh (in African)", $elephant->getSound());
-        static::assertEquals("Eeeeeh (in African)", $rhino->getSound());
-        static::assertEquals("Hrrr hrrrrr hrrrr (in African)", $hippo->getSound());
+        static::assertEquals("Pauuuuh (African)", $elephant->getSound());
+        static::assertEquals("Eeeeeh (African)", $rhino->getSound());
+        static::assertEquals("Hrrr hrrrrr hrrrr (African)", $hippo->getSound());
     }
 
     /**
      * @test
      *
-     * @expectedException RuntimeException
+     * @expectedException InvalidArgumentException
      * @expectedExceptionMessage There is no such animal species in Asia
      */
     public function throws_exception_on_trying_to_create_non_existing_asian_animal()

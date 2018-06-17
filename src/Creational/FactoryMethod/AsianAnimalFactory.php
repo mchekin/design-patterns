@@ -3,9 +3,11 @@
 namespace Patterns\Creational\FactoryMethod;
 
 
+use InvalidArgumentException;
+use Patterns\Creational\AbstractFactory\AbstractAnimalFactory;
 use RuntimeException;
 
-class AsianAnimalFactory implements AnimalFactory
+class AsianAnimalFactory extends AbstractAnimalFactory
 {
     /**
      * @param string $species
@@ -23,6 +25,6 @@ class AsianAnimalFactory implements AnimalFactory
                 return new AsianRhino();
         }
 
-        throw new RuntimeException("There is no such animal species in Asia");
+        throw new InvalidArgumentException("There is no such animal species in Asia");
     }
 }

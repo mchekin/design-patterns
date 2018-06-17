@@ -10,6 +10,6 @@ class Hippo implements Animal
      */
     public function getSound(): string
     {
-        return "Hrrr hrrrrr hrrrr (in African)";
+        return "Hrrr hrrrrr hrrrr (African)";
     }
 }
